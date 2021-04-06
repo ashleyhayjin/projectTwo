@@ -34,7 +34,7 @@ A website that displays jokes and allows a logged in user to create, display, an
 
 ## Wireframe
 
-![wireframe](https://files.slack.com/files-pri/T01G8M1MG3S-F01TBTKL8TC/wireframe_project2.png)
+![alt text](https://user-images.githubusercontent.com/74076318/113643614-54d52a80-9648-11eb-8068-c6230a2047dd.png)
 
 
 ## Technologies
