@@ -46,8 +46,10 @@ MYSQL2
 Sequelize
 DOTENV
 Heroku
-NPM Package for jokes 
+NPM Package for jokes: Awesome Dev Jokes
     1. https://www.npmjs.com/package/awesome-dev-jokes
+NPM Package for Data: Data Forge
+    1. https://www.npmjs.com/package/data-forge
 ```
 
 ## Rough Breakdown of the Task
