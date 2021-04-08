@@ -29,14 +29,14 @@
     },
     {
         "joke_text": "Did you hear how the zombie bodybuilder hurt his back? He was dead-lifting.",
-        "category_id": 8
+        "category_id": 1
     },
     {
         "joke_text": "I have a joke about time travel, but I'm not gonna share it. You guys didn't like it.",
-        "category_id": 9
+        "category_id": 2
     },
     {
         "joke_text": "You can tune a piano, but you can't tuna fish.",
-        "category_id": 10
+        "category_id": 3
     }
 ]
