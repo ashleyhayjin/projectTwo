@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intital-scale=1.0">
     <title>Git Jokes</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="../../public/style.css">
 </head>
 <body>
     <div class="wrapper">
@@ -14,7 +14,7 @@
                 <nav class="nav">
                     {{!-- include handlebar if/else for loggedIn per examples --}}
                     {{#if loggedIn}}
-                    <a class ="link" href="/" id="logout">Logout</a>
+                    {{!-- <a class ="link" href="/" id="logout">Logout</a> --}}
                     {{else}}
                     <a class="link" href="/login">Login</a>
                     {{/if}}
