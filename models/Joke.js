@@ -1,7 +1,7 @@
 const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Joke extends model {}
+class Joke extends Model {}
 
 Joke.init(
     {
@@ -15,14 +15,14 @@ Joke.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        username: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'username'
+                key: 'id'
             },
             allowNull: true,
-        },
+        }, 
         category_id: {
             type: DataTypes.INTEGER,
             references: {
