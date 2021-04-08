@@ -20,8 +20,8 @@ class User extends model {}
                 allowNull: false,
                 unique: true,
                 validate: {
-                isEmail: true,
-            },
+                    isEmail: true,
+                },
             },
             password: {
                 type: DataTypes.STRING,
@@ -30,12 +30,22 @@ class User extends model {}
                   len: [8],
                 },
             },
-            sequelize,
-            timestamps: false,
-            freezeTableName: true,
-            underscored: true,
-            modelName: 'user',
-    });
+        },
+        {
+            {
+                hooks: {
+                    beforeCreate: async (newUserData) => {
+                        newUserData.password = await bycrypt.hash(newUserData.password, 10);
+                        return newUserData;
+                    },
+                },
+                sequelize,
+                timestamps: false,
+                freezeTableName: true,
+                underscored: true,
+                modelName: 'user',
+        }
+    );
 
 
 module.exports = User;
