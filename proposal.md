@@ -25,6 +25,9 @@ THEN I can see jokes.
 GIVEN I want a specific category of jokes
 WHEN I press on a button with the category
 THEN it should display the jokes with that tag.
+GIVEN It is a specific date
+WHEN I go on Git Joke's twitter page
+THEN Git Joke's twitter will display a random joke from the database
 ```
 
 ## Project Description 
@@ -46,6 +49,10 @@ MYSQL2
 Sequelize
 DOTENV
 Heroku
+NPM Twitter 
+    1. https://www.npmjs.com/package/twit
+NPM Package to filter Data (Data forge)
+    1. https://www.npmjs.com/package/data-forge
 NPM Package for jokes 
     1. https://www.npmjs.com/package/awesome-dev-jokes
 ```
@@ -61,7 +68,7 @@ Create Seed information
 Create API routes
 Create express session and cookies
 Deploy to Heroku
-
+Filter Data using Data Forge
 ```
 
 ## Ideas to Implement if Time Persist
