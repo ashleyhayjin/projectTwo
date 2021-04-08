@@ -32,18 +32,17 @@ class User extends model {}
             },
         },
         {
-            {
-                hooks: {
-                    beforeCreate: async (newUserData) => {
-                        newUserData.password = await bycrypt.hash(newUserData.password, 10);
-                        return newUserData;
-                    },
+            hooks: {
+                beforeCreate: async (newUserData) => {
+                    newUserData.password = await bycrypt.hash(newUserData.password, 10);
+                    return newUserData;
                 },
-                sequelize,
-                timestamps: false,
-                freezeTableName: true,
-                underscored: true,
-                modelName: 'user',
+            },
+            sequelize,
+            timestamps: false,
+            freezeTableName: true,
+            underscored: true,
+            modelName: 'user',
         }
     );
 
