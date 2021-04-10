@@ -1,5 +1,3 @@
-
-
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
@@ -13,6 +11,5 @@ const sequelize = new Sequelize(
     port: 3306,
   }
 );
-
 module.exports = sequelize;
 
