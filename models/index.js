@@ -7,8 +7,9 @@ User.hasMany(Joke, {
     onDelete: 'CASCADE'
 });
 
-// Joke.belongsTo(Category, {
-//     foreignKey: 'category_id',
-// });
+Joke.belongsTo(Category, {
+    foreignKey: 'category_id',
+});
 
-module.exports = { Joke, User };
+module.exports = { User, Joke, Category };
+

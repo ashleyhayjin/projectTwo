@@ -22,16 +22,15 @@ class Joke extends Model {}
                 key: 'id'
             },
         }, 
+        category_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'category',
+                key: 'id'
+            },
+        },
     },
-        // category_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'category',
-        //         key: 'id'
-        //     },
-        // },
-        {
-        sequelize,
+    {   sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
