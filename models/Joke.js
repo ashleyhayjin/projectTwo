@@ -21,7 +21,6 @@ class Joke extends Model {}
                 model: 'user',
                 key: 'id'
             },
-            allowNull: true,
         }, 
         category_id: {
             type: DataTypes.INTEGER,
@@ -35,8 +34,8 @@ class Joke extends Model {}
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'joke',    
-    }
-);
+        modelName: 'joke',   
+        } 
+    );
 
 module.exports = Joke;
