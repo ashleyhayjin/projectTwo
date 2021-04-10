@@ -19,6 +19,7 @@ class User extends Model {
             username: {
                 type: DataTypes.STRING,
                 allowNull: false,
+                unique: true
             },
             email: {
                 type: DataTypes.STRING,
@@ -42,14 +43,16 @@ class User extends Model {
                     newUserData.password = await bcrypt.hash(newUserData.password, 10);
                     return newUserData;
                 },
+                beforeUpdate: async (updatedUserData) => {
+                    updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                    return updatedUserData;
+                  },
             },
-            sequelize,
-            timestamps: false,
-            freezeTableName: true,
-            underscored: true,
-            modelName: 'user',
-        }
-    );
-
-
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user',
+    }   
+);
 module.exports = User;
