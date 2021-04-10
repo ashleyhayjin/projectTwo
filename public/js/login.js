@@ -46,6 +46,6 @@ document.querySelector('#login-form').addEventListener('submit', loginFormHandle
     }
   };
   
-  document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+  document.querySelector('#signup-form').addEventListener('submit', loginFormHandler);
   
   
