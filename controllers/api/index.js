@@ -5,5 +5,5 @@ const userRoutes = require('./userRoutes.js');
 // router.use('/', postto);
 router.use('/users', userRoutes);
 
-module.exports = { router };
+module.exports = router;
 
