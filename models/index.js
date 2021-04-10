@@ -1,4 +1,4 @@
-const Category = require('./Category');
+// const Category = require('./Category');
 const Joke = require('./Joke');
 const User = require('./User');
 
@@ -7,9 +7,8 @@ User.hasMany(Joke, {
     onDelete: 'CASCADE'
 });
 
-Joke.belongsTo(Category, {
-    foreignKey: 'category_id',
-});
+// Joke.belongsTo(Category, {
+//     foreignKey: 'category_id',
+// });
 
-
-module.exports = { Category, Joke, User };
+module.exports = { Joke, User };

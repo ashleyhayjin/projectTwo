@@ -21,21 +21,22 @@ class Joke extends Model {}
                 model: 'user',
                 key: 'id'
             },
-            allowNull: true,
         }, 
-        category_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'category',
-                key: 'id'
-            },
-        },
+    },
+        // category_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'category',
+        //         key: 'id'
+        //     },
+        // },
+        {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'joke',    
-    }
-);
+        modelName: 'joke',   
+        } 
+    );
 
 module.exports = Joke;
