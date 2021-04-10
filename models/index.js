@@ -1,4 +1,4 @@
-// const Category = require('./Category');
+const Category = require('./Category');
 const Joke = require('./Joke');
 const User = require('./User');
 
@@ -12,4 +12,3 @@ Joke.belongsTo(Category, {
 });
 
 module.exports = { User, Joke, Category };
-

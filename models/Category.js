@@ -1,7 +1,7 @@
-// const { Model, DataTypes} = require('sequelize');
-// const sequelize = require('../config/connection');
+const { Model, DataTypes} = require('sequelize');
+const sequelize = require('../config/connection');
 
-// class Category extends Model {}
+class Category extends Model {}
 
 Category.init(
     {
@@ -24,4 +24,4 @@ Category.init(
     }
 );
 
-// module.exports = Category;
+module.exports = Category;
