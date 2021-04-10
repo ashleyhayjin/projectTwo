@@ -12,4 +12,3 @@ Joke.belongsTo(Category, {
 });
 
 module.exports = { User, Joke, Category };
-
