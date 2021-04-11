@@ -4,7 +4,7 @@ const userRoutes = require('./userRoutes');
 const jokeRoutes = require('./jokeRoutes.js');
 // router.use('/', postto);
 router.use('/users', userRoutes);
-router.use('/jokes', jokeRoutes);
+// router.use('/jokes', jokeRoutes);
 
 module.exports = router;
 

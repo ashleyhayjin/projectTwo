@@ -1,16 +1,11 @@
 const router = require('express').Router();
 const {  User, Joke } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
-  try {
-    // Pass serialized data and session flag into template
+router.get('/', (req, res) => {
     res.render('dashboard', { 
       logged_in: req.session.logged_in 
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
 
