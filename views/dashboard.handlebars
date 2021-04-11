@@ -1,3 +1,10 @@
+{{#if jokes.length}}
 <section>
-    <h2>You made it to the dashboard page!!</h2>
+    <h2>Jokes:</h2>
+        {{#each jokes as |joke|}}
+        {{/each}}
 </section>
+{{/if}}
+
+<button type="submit" class="btn"><a class ="link" href="/dashboard/new">New Joke</a></button>
+<script src"/js/newJoke.js"></script>
