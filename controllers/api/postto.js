@@ -1,19 +1,43 @@
-// const router = require('express').Router();
-// const { input } = require('../../models');
+const router = require('express').Router();
+const { Joke } = require('../../models');
+const Twit = require('twit');
 
-// //Everything is placeholder until we get the everything finalized
+router.get('/', async (req, res) => {
+    console.log("work1");
+    try {
+        let devTwit = new Twit({
+            consumer_key: process.env.TWITTER_API_KEY,
+            consumer_secret: process.env.TWITTER_API_SECRET,
+            access_token: process.env.TWITTER_ACCESS_TOKEN,
+            access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+            timeout_ms: 60*1000,
+            strictSSL: true
+        });
 
-// let poster = new Twit({
-//     consumer_key: input.key,
-//     consumer_secret: input.secret,
-//     access_token: input.access_token,
-//     access_token_secret: input.access_token_secret,
-//     timeout_ms: 60*1000,
-//     strictSSL: true
-// })
+        devTwit.get('account/verify_credentials', {
+            include_entities: false,
+            skip_status: true,
+            include_email: false
+        }, onAuthenticated)
 
-// poster.post('statuses/update', { status: input.text }, function(err, data, response) {
-//     console.log(data);
-// })
+        function onAuthenticated(err, res) {
+            if (err) {
+                throw err
+            }
+            console.log('Authentication successful, running bot')
+        }
 
-// module.exports = router;
+        let number = await Joke.count();
+        let randomJoke = Math.floor(Math.random() * (number - 1));
+        const jokeText = await Joke.findByPk(randomJoke);
+        console.log("work2");
+        devTwit.post('statuses/update', { status: jokeText.joke_text }, function(err, data, response) {
+            console.log(data);
+    });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+    res.redirect('/');
+});
+
+module.exports = router;
