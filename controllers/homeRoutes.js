@@ -24,8 +24,11 @@ router.get('/', async (req, res) => {
 module.exports = router;
 
 router.get('/jokes', (req,res) => {
+  console.log("req.session:", req.session);
   if(req.session.logged_in){
-    res.render('newJoke');
+    res.render('newJoke',{
+      username: req.session.username,
+    });
   }
 })
 router.get('/login', (req, res) => {
