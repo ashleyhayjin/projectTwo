@@ -1,21 +1,21 @@
 const router = require('express').Router();
-const { input } = require('../../models');
+const { Joke } = require('../../models');
 const fs = require('fs');
 const path = require('path');
 const dotenv = require(dotenv);
 
 //Everything is placeholder until we get the everything finalized
 
-let poster = new Twit({
+let devTwit = new Twit({
     consumer_key: process.env.TWITTER_API_KEY,
     consumer_secret: process.env.TWITTER_API_SECRET,
     access_token: process.env.TWITTER_ACCESS_TOKEN,
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
     timeout_ms: 60*1000,
     strictSSL: true
-})
+});
 
-poster.get('account/verify_credentials', {
+devTwit.get('account/verify_credentials', {
     include_entities: false,
     skip_status: true,
     include_email: false
@@ -28,9 +28,12 @@ function onAuthenticated(err, res) {
     console.log('Authentication successful, running bot')
 }
 
-poster.post('statuses/update', { status: 'hello world'}, function (err, data, response) {
-    console.log(data)
+let number = await Joke.count();
+let randomJoke = Math.floor(Math.random() * (number - 1));
+const jokeText = await Joke.findByPk(randomJoke);
+
+devTwit.post('statuses/update', { status: jokeText.joke_text }, function(err, data, response) {
+    console.log(data);
 })
 
 module.exports = router;
-
