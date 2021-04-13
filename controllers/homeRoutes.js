@@ -27,6 +27,7 @@ router.get('/jokes', (req,res) => {
   console.log("req.session:", req.session);
   if(req.session.logged_in){
     res.render('newJoke',{
+      logged_in: true,
       username: req.session.username,
     });
   }
