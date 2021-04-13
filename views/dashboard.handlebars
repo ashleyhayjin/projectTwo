@@ -7,7 +7,8 @@
 {{/each}}
 </section>
 {{/if}}
-
-<button type="submit" class="btn"><a class ="link" href="/jokes">New Joke</a></button>
-<input id="thing" type="button" value="POST" onclick="twitPost();"/>
+{{#if logged_in}}
+    <button type="submit" class="btn"><a class ="link" href="/jokes">New Joke</a></button>
+    <input id="thing" type="button" value="POST" onclick="twitPost();"/>
+{{/if}}
 <script src="/controllers/api/postto.js"></script>
