@@ -37,6 +37,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
+    res.redirect('/');
 });
 
 module.exports = router;
