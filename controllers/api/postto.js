@@ -1,19 +1,36 @@
-// const router = require('express').Router();
-// const { input } = require('../../models');
+const router = require('express').Router();
+const { input } = require('../../models');
+const fs = require('fs');
+const path = require('path');
+const dotenv = require(dotenv);
 
-// //Everything is placeholder until we get the everything finalized
+//Everything is placeholder until we get the everything finalized
 
-// let poster = new Twit({
-//     consumer_key: input.key,
-//     consumer_secret: input.secret,
-//     access_token: input.access_token,
-//     access_token_secret: input.access_token_secret,
-//     timeout_ms: 60*1000,
-//     strictSSL: true
-// })
+let poster = new Twit({
+    consumer_key: process.env.TWITTER_API_KEY,
+    consumer_secret: process.env.TWITTER_API_SECRET,
+    access_token: process.env.TWITTER_ACCESS_TOKEN,
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+    timeout_ms: 60*1000,
+    strictSSL: true
+})
 
-// poster.post('statuses/update', { status: input.text }, function(err, data, response) {
-//     console.log(data);
-// })
+poster.get('account/verify_credentials', {
+    include_entities: false,
+    skip_status: true,
+    include_email: false
+}, onAuthenticated)
 
-// module.exports = router;
+function onAuthenticated(err, res) {
+    if (err) {
+        throw err
+    }
+    console.log('Authentication successful, running bot')
+}
+
+poster.post('statuses/update', { status: 'hello world'}, function (err, data, response) {
+    console.log(data)
+})
+
+module.exports = router;
+
