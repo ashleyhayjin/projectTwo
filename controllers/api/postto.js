@@ -3,7 +3,6 @@ const { Joke } = require('../../models');
 const Twit = require('twit');
 
 router.get('/', async (req, res) => {
-    console.log("work1");
     try {
         let devTwit = new Twit({
             consumer_key: process.env.TWITTER_API_KEY,
@@ -30,14 +29,13 @@ router.get('/', async (req, res) => {
         let number = await Joke.count();
         let randomJoke = Math.floor(Math.random() * (number - 1));
         const jokeText = await Joke.findByPk(randomJoke);
-        console.log("work2");
         devTwit.post('statuses/update', { status: jokeText.joke_text }, function(err, data, response) {
             console.log(data);
     });
     } catch (err) {
         res.status(400).json(err);
     }
-    res.redirect('/');
+    res.redirect('/').catch(err);
 });
 
 module.exports = router;
