@@ -1,10 +1,6 @@
 const router = require('express').Router();
 const { Joke } = require('../../models');
-const fs = require('fs');
-const path = require('path');
 const dotenv = require(dotenv);
-
-//Everything is placeholder until we get the everything finalized
 
 let devTwit = new Twit({
     consumer_key: process.env.TWITTER_API_KEY,
