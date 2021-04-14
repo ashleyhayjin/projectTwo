@@ -7,6 +7,11 @@ User.hasMany(Joke, {
     onDelete: 'CASCADE'
 });
 
+Joke.belongsTo(User, {
+    foreignKey: 'user_id',
+})
+
+
 Joke.belongsTo(Category, {
     foreignKey: 'category_id',
 });
