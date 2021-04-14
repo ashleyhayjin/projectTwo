@@ -15,4 +15,8 @@ Joke.belongsTo(Category, {
     foreignKey: 'category_id'
 });
 
+Category.hasMany(Joke, {
+    foreignKey: 'category_id'
+});
+
 module.exports = { User, Joke, Category };

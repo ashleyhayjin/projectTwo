@@ -2,17 +2,30 @@
     <button type="submit" class="btn"><a class ="link" href="/jokes">New Joke</a></button>
     <button type="tweet" class="btn"><a class="link" href="/api/post">Tweet random Joke</a></button>
 {{/if}}
-{{#if jokes.length}}
-<section>
-    <h2 class="title">Jokes:</h2>
+
+
+<div class="row">
+    <div class="col-4">
+        <h3 class="title">Categories:</h3>
+          {{#each categories as |category|}}
+          <ul class="text-center"><a  href="/api/categories/{{category.category_name}}">{{category.category_name}}</a></ul>
+        {{/each}}
+    </div>
+
+<div class="col-8">
+    
+    <h2 class="title">Jokes:</h2> 
+    
+    {{#if jokes.length}}
      {{#each jokes as |joke|}}
      <div class="post">
-        <h5>{{joke.user.username}}'s Joke:</h5>
+        <h5>{{user.username}}'s Joke:</h5>
         <h4>{{joke.joke_text}}</h4><br>
         </div>
     {{/each}}
 {{/if}}
-</section>
+</div>
+</div>
 
 
 <script src="/controllers/api/postto.js"></script>
