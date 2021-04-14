@@ -4,6 +4,7 @@ const {  User, Joke, Category } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
+    console.log(req.body);
   const jokeData = await Joke.findAll({
       attributes: ['joke_text'],
       include: [{
@@ -14,12 +15,14 @@ router.get('/', async (req, res) => {
   const categoriesData = await Category.findAll({
      attributes:['category_name']
    }); 
-  const jokes = jokeData.map((joke) => joke.get({ plain: true }));
   const categories = categoriesData.map((cat) => cat.get({plain: true}));
+  const jokes = jokeData.map((joke) => joke.get({ plain: true }));
+  console.log("jokes: ", jokes)
   res.render('dashboard', { 
-      jokes,
+      username: req.body.username,
       categories,
-      logged_in: req.session.logged_in
+      jokes, 
+      logged_in: req.session.logged_in,
   });
 }
   catch (err) {
