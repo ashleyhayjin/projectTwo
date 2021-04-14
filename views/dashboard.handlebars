@@ -1,14 +1,16 @@
-{{#if jokes.length}}
-<section>
-    <h2>Jokes:</h2>
-     {{#each jokes as |joke|}}   
-    <h4>{{joke.joke_text}}</h4>
-        
-{{/each}}
-</section>
-{{/if}}
 {{#if logged_in}}
     <button type="submit" class="btn"><a class ="link" href="/jokes">New Joke</a></button>
     <button type="tweet" class="btn"><a class="link" href="/api/post">Tweet random Joke</a></button>
 {{/if}}
+{{#if jokes.length}}
+<section>
+    <h2>Jokes:</h2>
+     {{#each jokes as |joke|}}
+    <h5>{{joke.user.username}}'s Joke:</h5>
+    <h4>{{joke.joke_text}}</h4><br>
+    {{/each}}
+{{/if}}
+</section>
+
+
 <script src="/controllers/api/postto.js"></script>

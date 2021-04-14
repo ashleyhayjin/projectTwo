@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
             if (err) {
                 throw err
             }
-            console.log('Authentication successful, running bot')
+            console.log('Authentication successful, running Twitter bot')
         }
 
         let number = await Joke.count();
