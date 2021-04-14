@@ -36,3 +36,10 @@ form .form-label {
     border: 1px solid #484848;
     border-radius: 0.3rem;
   }
+
+  .post {
+    border: 3px solid darkblue;
+    text-align: center;
+  }
+
+ 

@@ -1,15 +1,32 @@
-{{#if jokes.length}}
-<section>
-    <h2>Jokes:</h2>
-     {{#each jokes as |joke|}}
-     <h1>By: {{user.username}}</h1>   
-    <h4>{{joke.joke_text}}</h4>
-        
-{{/each}}
-</section>
-{{/if}}
+
 {{#if logged_in}}
     <button type="submit" class="btn"><a class ="link" href="/jokes">New Joke</a></button>
     <button type="tweet" class="btn"><a class="link" href="/api/post">Tweet random Joke</a></button>
 {{/if}}
+
+
+<div class="row">
+    <div class="col-4">
+        <h3 class="title">Categories:</h3>
+          {{#each categories as |category|}}
+          <ul class="text-center"><a  href="/api/categories/{{category.category_name}}">{{category.category_name}}</a></ul>
+        {{/each}}
+    </div>
+
+<div class="col-8">
+    
+    <h2 class="title">Jokes:</h2> 
+    
+    {{#if jokes.length}}
+     {{#each jokes as |joke|}}
+     <div class="post">
+        <h5>{{user.username}}'s Joke:</h5>
+        <h4>{{joke.joke_text}}</h4><br>
+        </div>
+    {{/each}}
+{{/if}}
+</div>
+</div>
+
+
 <script src="/controllers/api/postto.js"></script>
