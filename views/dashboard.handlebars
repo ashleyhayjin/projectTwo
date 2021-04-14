@@ -4,10 +4,12 @@
 {{/if}}
 {{#if jokes.length}}
 <section>
-    <h2>Jokes:</h2>
+    <h2 class="title">Jokes:</h2>
      {{#each jokes as |joke|}}
-    <h5>{{joke.user.username}}'s Joke:</h5>
-    <h4>{{joke.joke_text}}</h4><br>
+     <div class="post">
+        <h5>{{joke.user.username}}'s Joke:</h5>
+        <h4>{{joke.joke_text}}</h4><br>
+        </div>
     {{/each}}
 {{/if}}
 </section>
