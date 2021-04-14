@@ -4,17 +4,20 @@ const {  User, Joke } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
+    console.log(req.body);
   const jokeData = await Joke.findAll({
       attributes: ['joke_text'],
-      // include: [{
-      //     model: User,
-      //     attributes: ['username']
-      // }],
+      include: [{
+          model: User,
+          attributes: ['username']
+      }],
   });
   const jokes = jokeData.map((joke) => joke.get({ plain: true }));
+console.log("jokes: ", jokes)
   res.render('dashboard', { 
+      username: req.body.username,
       jokes, 
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
   });
   }
   catch (err) {

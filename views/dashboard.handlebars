@@ -1,7 +1,8 @@
 {{#if jokes.length}}
 <section>
     <h2>Jokes:</h2>
-     {{#each jokes as |joke|}}   
+     {{#each jokes as |joke|}}
+     <h1>By: {{user.username}}</h1>   
     <h4>{{joke.joke_text}}</h4>
         
 {{/each}}
