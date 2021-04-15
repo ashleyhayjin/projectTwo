@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Joke } = require('../../models');
+const { Joke } = require('../models');
 const Twit = require('twit');
 
 router.get('/', async (req, res) => {
@@ -27,17 +27,17 @@ router.get('/', async (req, res) => {
         }
 
         let number = await Joke.count();
-        let randomJoke = Math.floor(Math.random() * (number - 1));
+        let randomJoke = Math.floor(Math.random() * (number) + 1);
         const jokeText = await Joke.findByPk(randomJoke);
         setTimeout(function(){
             devTwit.post('statuses/update', { status: jokeText.joke_text }, function(err, data, response) {
-                console.log(randomJoke, data);
+                console.log(number, data);
             });
         }, 100);
     } catch (err) {
         res.status(400).json(err);
     }
-    res.redirect('/').catch(err);
+    // res.redirect('/').catch(err);
 });
 
 module.exports = router;
