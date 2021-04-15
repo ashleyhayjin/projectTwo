@@ -9,8 +9,12 @@ router.get('/', async (req, res) => {
       attributes: ['joke_text'],
       include: [{
           model: User,
-          attributes: ['username']
+          attributes: ['username'],
       }],
+    include: [{
+      model: Category,
+      attributes: ["category_name"],
+    }],
   }); 
   const categoriesData = await Category.findAll({
      attributes:['category_name']
