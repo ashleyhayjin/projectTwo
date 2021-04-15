@@ -1,15 +1,7 @@
 const router = require('express').Router();
-const { Joke, User } = require('../../models');
+const { Joke, User, Category } = require('../../models');
 const sequelize = require('../../config/connection');
-// const withAuth = require('../../utils/auth');
 
-// router.get('/jokes', async (req,res) => {
-//     try {
-//         const jokeData = await Joke.findAll({
-
-//         })
-//     }
-// })
 
 router.get('/', async (req, res) => {
     try{
@@ -26,9 +18,15 @@ router.post('/', async (req,res) => {
     try{
         const jokeData = await Joke.create({
             joke_text: req.body.joke_text,
+            category_id: req.body.category_id,
         });
+        const categoryData = await Category.create({
+            category_name: req.body.category_name,
 
+        });
         res.status(200).json(jokeData);
+        res.status(200).json(categoryData);
+
     } catch (err) {
         res.status(400).json(err);
     }
