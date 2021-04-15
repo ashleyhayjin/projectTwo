@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div>
-                <nav class="nav">
-                    {{!-- include handlebar if/else for loggedIn per examples --}}
+    <div class="wrapper" style="background-color: white">
+        <header style="background-color: mistyrose">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark px-3" >
+                <div class="collapse navbar-collapse justify-content-end" id="navbar">
                     {{#if logged_in}}
-                    <a class ="link" href="/" id="logout">Logout</a>
+                        <a class="nav-link active" style="color:#065b83" href="/" id="logout">Logout</a>
                     {{else}}
-                    <a class="link" href="/login">Login</a>
+                        <a class="nav-link active" style="color:#065b83" href="/login">Login</a>
                     {{/if}}
-                </nav>
-            </div>
-          <h1 class="title">Git Jokes</h1>
+                    {{#if logged_in}}
+                        <button type="submit" class="btn"><a class ="link" style="color: #065b83" href="/jokes">New Joke</a></button>
+                        <button type="tweet" class="btn"><a class="link" style="color: #065b83" href="/api/post">Tweet random Joke</a></button>
+                    {{/if}}
+                </div>
+            </nav>
+            <h1 class=" display text-center" style="color: #065b83">Git Jokes</h1> 
         </header>
 
         <main>
