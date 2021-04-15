@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
             }
             console.log('Authentication successful, running Twitter bot')
         }
-
+        console.log('fuck');
         let number = await Joke.count();
         let randomJoke = Math.floor(Math.random() * (number) + 1);
         const jokeText = await Joke.findByPk(randomJoke);
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(400).json(err);
     }
-    // res.redirect('/').catch(err);
+    return res.redirect('back');
 });
 
 module.exports = router;
