@@ -29,9 +29,11 @@ router.get('/', async (req, res) => {
         let number = await Joke.count();
         let randomJoke = Math.floor(Math.random() * (number - 1));
         const jokeText = await Joke.findByPk(randomJoke);
-        devTwit.post('statuses/update', { status: jokeText.joke_text }, function(err, data, response) {
-            console.log(data);
-    });
+        setTimeout(function(){
+            devTwit.post('statuses/update', { status: jokeText.joke_text }, function(err, data, response) {
+                console.log(randomJoke, data);
+            });
+        }, 100);
     } catch (err) {
         res.status(400).json(err);
     }
