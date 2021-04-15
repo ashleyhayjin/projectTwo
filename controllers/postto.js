@@ -25,7 +25,6 @@ router.get('/', async (req, res) => {
             }
             console.log('Authentication successful, running Twitter bot')
         }
-        console.log('fuck');
         let number = await Joke.count();
         let randomJoke = Math.floor(Math.random() * (number) + 1);
         const jokeText = await Joke.findByPk(randomJoke);
