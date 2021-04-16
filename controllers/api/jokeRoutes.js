@@ -25,7 +25,7 @@ router.post('/', async (req,res) => {
 
         });
         res.status(200).json(jokeData);
-        res.status(200).json(categoryData);
+        // res.status(200).json(categoryData);
 
     } catch (err) {
         res.status(400).json(err);
