@@ -1,13 +1,23 @@
 const router = require('express').Router();
 console.log("Bot is starting");
-var config = require('../config/config');
 const { Joke } = require('../models');
 var Twit = require('twit');
 
-var T = new Twit(config);
+var T = new Twit({
+    consumer_key : process.env.API_KEY,
+    consumer_secret : process.env.API_SECRET_KEY,
+    access_token: process.env.ACCESS_TOKEN,
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET
+});
 
 router.get('/', async (req, res) => {
-    tweetThis();
+    let success = await tweetThis();
+    if (success) {
+        res.redirect('/');
+    } else {
+        res.status(400);
+    }
+
 })
 
 //setInterval(tweetThis,3600000)//every 1 hour
@@ -27,11 +37,12 @@ async function tweetThis() {
 
     function tweeted (err, data, response) {
         if(err){
-            console.log("Something is wrong", err)
+            console.log("Something is wrong", err);
         }else{
-            console.log("Works fine")
+            console.log("Works fine");
         }
-    } 
+    }
+    return true;
 }
 
 module.exports = router;
