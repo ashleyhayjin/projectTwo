@@ -1,10 +1,17 @@
 
-<div class="row">
-    <div class="col-4">
-        <h3 class="title">Categories:</h3>
-          {{#each jokes as |joke|}}
-          <ul class="text-center"><a  href="/api/categories/{{joke.category_name}}">{{joke.category_name}}</a></ul>
-        {{/each}}
+<div class="row center">
+    <div class="col-4 ">
+        <div class="row">
+    <div class="col-4 center categories ">
+        <h3 class="title ">Categories</h3>
+            <ul><a href="/api/jokes/dry">Dry</a></ul>
+            <ul><a href="/api/jokes/weird">Weird</a></ul>
+            <ul><a href="/api/jokes/developer">Developer</a></ul>
+            <ul><a href="/api/jokes/old">Old</a></ul>
+            <ul><a href="/api/jokes/dadjokes">Dad Jokes</a></ul>
+            <ul><a href="/api/jokes/animal">Animal</a></ul>
+    </div>
+</div>
     </div>
 
 <div class="col-8">

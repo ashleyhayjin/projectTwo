@@ -19,7 +19,16 @@ header {
     font-weight: bold;
     text-align: center; 
   }
-  
+.categories {
+  margin-left: 200px;
+}
+ul {
+  margin-right: 20px;
+}
+.center {
+  text-align: center;
+  margin-right: 50px;
+}
 form label,
 form .form-label {
   display: inline-block;

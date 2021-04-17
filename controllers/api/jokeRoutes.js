@@ -15,13 +15,64 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/weird', async (req, res) => {
+    try{
+    const jokeData = await Joke.findAll({ where: { category_name: 'Weird' } });
+    res.status(200).json(jokeData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/dry', async (req, res) => {
+    try{
+    const jokeData = await Joke.findAll({ where: { category_name: 'Dry' } });
+    res.status(200).json(jokeData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/developer', async (req, res) => {
+    try{
+    const jokeData = await Joke.findAll({ where: { category_name: 'Developer' } });
+    res.status(200).json(jokeData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/old', async (req, res) => {
+    try{
+    const jokeData = await Joke.findAll({ where: { category_name: 'Old' } });
+    res.status(200).json(jokeData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/dadjokes', async (req, res) => {
+    try{
+    const jokeData = await Joke.findAll({ where: { category_name: 'Dad Jokes' } });
+    res.status(200).json(jokeData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+router.get('/animal', async (req, res) => {
+    try{
+    const jokeData = await Joke.findAll({ where: { category_name: 'Animal' } });
+    res.status(200).json(jokeData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
+
 router.post('/', async (req,res) => {
     try{
+        console.log(req);
         const userData = await User.findOne({ where: { username: req.session.username } });
         console.log('userData', userData);
         const jokeData = await Joke.create({
             joke_text: req.body.joke_text,
-            user_id: userData.id
+            category_name: req.body.category_name,
+            // user_id: userData.id
         });
         // const userData = await User.findOne({ where: { username: req.body.username } });
         // console.log("userData:" , userData);
