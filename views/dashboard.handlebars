@@ -2,8 +2,8 @@
 <div class="row">
     <div class="col-4">
         <h3 class="title">Categories:</h3>
-          {{#each categories as |category|}}
-          <ul class="text-center"><a  href="/api/categories/{{category.category_name}}">{{category.category_name}}</a></ul>
+          {{#each jokes as |joke|}}
+          <ul class="text-center"><a  href="/api/categories/{{joke.category_name}}">{{joke.category_name}}</a></ul>
         {{/each}}
     </div>
 

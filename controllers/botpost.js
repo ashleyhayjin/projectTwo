@@ -2,6 +2,7 @@ const router = require('express').Router();
 console.log("Bot is starting");
 const { Joke } = require('../models');
 var Twit = require('twit');
+// require('dotenv').config();
 
 var T = new Twit({
     consumer_key : process.env.API_KEY,
@@ -45,4 +46,4 @@ async function tweetThis() {
     return true;
 }
 
-// module.exports = router;
+module.exports = router;

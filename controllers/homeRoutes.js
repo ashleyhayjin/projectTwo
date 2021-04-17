@@ -6,21 +6,16 @@ router.get('/', async (req, res) => {
   try {
     console.log(req.body);
   const jokeData = await Joke.findAll({
-      attributes: ['joke_text'],
+      attributes: ['joke_text', 'category_name'],
       include: [{
           model: User,
           attributes: ['username'],
       }]
   }); 
-  const categoriesData = await Category.findAll({
-     attributes:['category_name']
-   }); 
-  const categories = categoriesData.map((cat) => cat.get({plain: true}));
-  const jokes = jokeData.map((joke) => joke.get({ plain: true }));
+ const jokes = jokeData.map((joke) => joke.get({ plain: true }));
   console.log("jokes: ", jokes)
   res.render('dashboard', { 
       username: req.body.username,
-      categories,
       jokes, 
       logged_in: req.session.logged_in,
   });
