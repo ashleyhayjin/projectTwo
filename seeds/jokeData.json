@@ -1,19 +1,5 @@
 [
     {
-        "joke_text": "You don't need a parachute to go skydiving. You need a parachute to go skydiving twice.",
-        "category_name": "Dry"
-    },
-    {
-        "joke_text": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
-        "category_name": "Dry"
-
-    },
-    {
-        "joke_text": "I broke my finger last week. On the other hand, I'm okay.",
-        "category_name": "Weird"
-
-    },
-    {
         "joke_text": "Someone stole my Microsoft Office and they're gonna pay. You have my Word.",
         "category_name": "Developer"
 
@@ -41,5 +27,65 @@
     {
         "joke_text": "You can tune a piano, but you can't tuna fish.",
         "category_name": "Animal"
+    },
+    {
+        "joke_text": "I'm afraid for the calendar. Its days are numbered.",
+        "category_name": "Dad Jokes"
+    },
+    {
+        "joke_text": "Why do fathers take an extra pair of socks when they go golfing? In case they get a hole in one!",
+        "category_name": "Dad Jokes"
+    },
+    {
+        "joke_text": "What do you call a fish wearing a bowtie? Sofishticated.",
+        "category_name": "Dad Jokes"
+    },
+    {
+        "joke_text": "Dear Math, grow up and solve your own problems.",
+        "category_name": "Dad Jokes"
+    },
+    {
+        "joke_text": "What do you call a cow with two legs? Lean beef!",
+        "category_name": "Weird"
+    },
+    {
+        "joke_text": "What do you call a monkey that loves Doritos? A chipmunk!",
+        "category_name": "Animal"
+    },
+    {
+        "joke_text": "When's the best time to go to the dentist? Tooth-hurtie!",
+        "category_name": "Corny"
+    },
+    {
+        "joke_text": "Why do fish live in salt water? Because pepper makes them sneeze!",
+        "category_name": "Dry"
+    },
+    {
+        "joke_text": "What kind of dogs love car racing? Lap dogs!",
+        "category_name": "Animal"
+    },
+    {
+        "joke_text": "Today I gave my dead batteries away. They were free of charge.",
+        "category_name": "Money"
+    },
+    {
+        "joke_text": "What does a zombie vegetarian eat? Graaaaaaaains!",
+        "category_name": "Food"
+    },
+    {
+        "joke_text": "The mythical creatures who solve all the problems of lesser mortals without having to move from their desks.",
+        "category_name": "Developer"
+    },
+    {
+        "joke_text": "Without google, most of us will not survive for six months in the profession of software development.",
+        "category_name": "Developer"
+    },
+    {
+        "joke_text": "We write such complex spaghetti code that it becomes difficult for ourselves to understand after a few days.",
+        "category_name": "Developer"
+    },
+    {
+        "joke_text": "Today I gave my dead batteries away. They were free of charge.",
+        "category_name": "Developer"
     }
 ]
