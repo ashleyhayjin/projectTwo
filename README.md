@@ -20,8 +20,9 @@
   
 * Screenshots:
   ![alt text](https://user-images.githubusercontent.com/74076318/114801086-a2484a80-9d60-11eb-93e4-719227a53b65.png)
+  ![alt text](https://user-images.githubusercontent.com/74076318/115116354-ae016000-9f5e-11eb-8e90-58372dfb11b6.png)
   ![alt text](https://user-images.githubusercontent.com/74076318/114801140-bab86500-9d60-11eb-856c-ee8fa6ab51a0.png)
-  ![alt text](https://user-images.githubusercontent.com/74076318/114801036-8a70c680-9d60-11eb-8420-42ef187339e1.png)
+  ![alt text](https://user-images.githubusercontent.com/74076318/115116297-72669600-9f5e-11eb-87a1-d11597f66dae.png)
 
 ## Installation
   We used node.js, express.js, Handlebars, MySql2, Sequelize, Heroku, and the NPM Twitter
