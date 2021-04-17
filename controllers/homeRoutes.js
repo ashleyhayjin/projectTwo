@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {  User, Joke, Category } = require('../models');
+const {  User, Joke } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -10,11 +10,7 @@ router.get('/', async (req, res) => {
       include: [{
           model: User,
           attributes: ['username'],
-      },  
-      {
-      model: Category,
-      attributes: ["category_name"],
-    }],
+      }]
   }); 
   const categoriesData = await Category.findAll({
      attributes:['category_name']

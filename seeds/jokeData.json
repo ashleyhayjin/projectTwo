@@ -1,37 +1,45 @@
 [
     {
-        "joke_text": "You don't need a parachute to go skydiving. You need a parachute to go skydiving twice."
+        "joke_text": "You don't need a parachute to go skydiving. You need a parachute to go skydiving twice.",
+        "category_name": "Dry"
+    },
+    {
+        "joke_text": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+        "category_name": "Dry"
 
     },
     {
-        "joke_text": "I told my wife she was drawing her eyebrows too high. She looked surprised."
+        "joke_text": "I broke my finger last week. On the other hand, I'm okay.",
+        "category_name": "Weird"
 
     },
     {
-        "joke_text": "I broke my finger last week. On the other hand, I'm okay."
+        "joke_text": "Someone stole my Microsoft Office and they're gonna pay. You have my Word.",
+        "category_name": "Developer"
 
     },
     {
-        "joke_text": "Someone stole my Microsoft Office and they're gonna pay. You have my Word."
-
+        "joke_text": "Apparently you can't use beef stew as a password. It's not stroganoff",
+        "category_name": "Developer"
     },
     {
-        "joke_text": "Apparently you can't use beef stew as a password. It's not stroganoff"
-
+        "joke_text": "Why couldn't the leopard play hide and seed? Because he was always spotted.",
+        "category_name": "Animal"
     },
     {
-        "joke_text": "Why couldn't the leopard play hide and seed? Because he was always spotted."
+        "joke_text": "What do you call two monkeys that share an Amazon account? Prime mates.",
+        "category_name": "Animal"
     },
     {
-        "joke_text": "What do you call two monkeys that share an Amazon account? Prime mates."
+        "joke_text": "Did you hear how the zombie bodybuilder hurt his back? He was dead-lifting.",
+        "category_name": "Dry"
     },
     {
-        "joke_text": "Did you hear how the zombie bodybuilder hurt his back? He was dead-lifting."
+        "joke_text": "I have a joke about time travel, but I'm not gonna share it. You guys didn't like it.",
+        "category_name": "Dry"
     },
     {
-        "joke_text": "I have a joke about time travel, but I'm not gonna share it. You guys didn't like it."
-    },
-    {
-        "joke_text": "You can tune a piano, but you can't tuna fish."
+        "joke_text": "You can tune a piano, but you can't tuna fish.",
+        "category_name": "Animal"
     }
 ]
