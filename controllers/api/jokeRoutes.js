@@ -72,7 +72,7 @@ router.post('/', async (req,res) => {
         const jokeData = await Joke.create({
             joke_text: req.body.joke_text,
             category_name: req.body.category_name,
-            // user_id: userData.id
+            user_id: userData.id
         });
         // const userData = await User.findOne({ where: { username: req.body.username } });
         // console.log("userData:" , userData);
