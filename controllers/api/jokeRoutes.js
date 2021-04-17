@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Joke, User, Category } = require('../../models');
+const { Joke, User } = require('../../models');
 const sequelize = require('../../config/connection');
 
 
@@ -18,11 +18,6 @@ router.post('/', async (req,res) => {
     try{
         const jokeData = await Joke.create({
             joke_text: req.body.joke_text,
-            category_id: req.body.category_id,
-        });
-        const categoryData = await Category.create({
-            category_name: req.body.category_name,
-
         });
         res.status(200).json(jokeData);
         // res.status(200).json(categoryData);
