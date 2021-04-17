@@ -6,13 +6,13 @@ router.post('/', async (req, res) => {
         console.log(req.body);
         const userData = await User.create(
           {
-          id: req.body.id,
+          id: Math.floor(Math.random() * 100),
           username: req.body.username,
           email: req.body.email,
           password: req.body.password,
 
         });
-        console.log("id",userData);
+        console.log("id",userData.id);
         req.session.save(() => {
           req.session.id = userData.id;
           req.session.username = userData.username;
